@@ -48,7 +48,7 @@ class Program
     static void drawMultilineTextCentered(string  textToDraw, int xPos, int yPos, int textSize, int spacing, Color color) {
         string[] splitText = splitString(textToDraw, '\n');
         for (int i = 0; i < int.Parse(splitText[^1]); i++) {
-            Raylib.DrawText(splitText[i], xPos - splitText[i].Length/2 * textSize/2, yPos + i * textSize + i* spacing, textSize, color);
+            Raylib.DrawText(splitText[i], xPos - Raylib.MeasureText(splitText[i], textSize)/2, yPos + i * textSize + i* spacing, textSize, color);
         }
 
     }
