@@ -81,11 +81,15 @@ class Program
 
         // }
         if (Raylib.IsKeyDown(KeyboardKey.Down)) {
-            player.Move(1);
+            player.MoveKey(1);
         }
         if (Raylib.IsKeyDown(KeyboardKey.Up)) {
-            player.Move(-1);
+            player.MoveKey(-1);
         }
+        player.Move();
+        player.checkOutOfbonds();
+        ball.Move();
+        ball.checkCollision(player, computer);
 
         // frame += 1;
     }

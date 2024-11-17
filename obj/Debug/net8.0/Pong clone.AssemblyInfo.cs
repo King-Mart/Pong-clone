@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pong clone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+959187e9fa946bc1d86a598a4aa35f29fe797860")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e08232f4673d8122d4272c297e8e5de63f355e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pong clone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pong clone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
