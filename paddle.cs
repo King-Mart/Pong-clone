@@ -7,7 +7,7 @@ class Paddle {
     public int  positionY;
     int SPEED = 1;
     public Vector2 speed = new Vector2(0,0);
-    int height = 60;
+    public int height = 60;
     public Paddle(int xPos, int ScreenHeight) {
         positionX = xPos;  
         positionY = ScreenHeight / 2 - height/2;

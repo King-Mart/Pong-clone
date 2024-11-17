@@ -18,21 +18,23 @@ class Ball {
         position += speed;
     }
     public void checkCollision(Paddle paddleLeft, Paddle paddleRight) {
-        if ((position.X + speed.X ) <= (48) ) {
-            
-            position.X = 48;
-            speed = new Vector2(-speed.X, paddleLeft.speed.Y + speed.Y);
-            Console.WriteLine(speed.ToString());
-            Console.WriteLine($"left paddle speed : {paddleLeft.speed.ToString()}");
-
+        if ((position.X + speed.X ) <= 48 && position.X + speed.X >= (48-SPEED)) {
+            if (position.Y > (paddleLeft.positionY - radius) && position.Y < (paddleLeft.positionY + paddleLeft.height)) {
+                position.X = 48;
+                speed = new Vector2(-speed.X, paddleLeft.speed.Y + speed.Y);
+                Console.WriteLine(speed.ToString());
+                Console.WriteLine($"left paddle speed : {paddleLeft.speed.ToString()}");
+            }
         }
-        if ((position.X + speed.X) >= (760 + SPEED)) {
-            if (position.Y > (paddleRight.positionY))
-            position.X = 760;
-            speed = new Vector2(-speed.X, paddleRight.speed.Y + speed.Y);
-            Console.WriteLine(speed.ToString());
-            
-            Console.WriteLine($"right paddle speed : {paddleRight.speed.ToString()}");
+        if ((position.X + speed.X) >= 760 && position.X + speed.X <= (760 + SPEED)) {
+            if (position.Y > (paddleRight.positionY - radius) && position.Y < (paddleRight.positionY + paddleRight.height)) {
+                position.X = 760;
+                speed = new Vector2(-speed.X, paddleRight.speed.Y + speed.Y);
+                Console.WriteLine(speed.ToString());
+                
+                Console.WriteLine($"right paddle speed : {paddleRight.speed.ToString()}");
+            }
+
         }
 
         //TOP COLLISION
