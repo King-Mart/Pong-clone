@@ -73,7 +73,9 @@ class Program
 
             Raylib.EndDrawing();
     }
+   static int scoreUpdate;
     static void update() {
+        
         // if (frame == 60) {
         //     frame = 0;
         // }
@@ -89,7 +91,15 @@ class Program
         player.Move();
         player.checkOutOfbonds();
         ball.Move();
-        ball.checkCollision(player, computer);
+        scoreUpdate = ball.checkCollision(player, computer);
+        if (scoreUpdate == 1) {
+            scores[1] += 1;
+            ball.Reset();
+        }
+        else if (scoreUpdate == 2) {
+            scores[0] += 1;
+            ball.Reset();
+        }
 
         // frame += 1;
     }
